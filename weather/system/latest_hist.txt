@@ -1,0 +1,154 @@
+    1  yum -y install denyhosts 
+    2  adduser gloriajw
+    3  passwd gloriajw
+    4  groupmod gloriajw dev
+    5  addgrp dev
+    6  addgroup dev
+    7  groupadd dev
+    8  groupmod gloriajw dev
+    9  groupmod gloriajw -n dev
+   10  usermod -g dev gloriajw
+   11  sudo su - glroiajw
+   12  sudo su - gloriajw
+   13  vi /etc/denyhosts.conf 
+   14  service denyhosts start
+   15  cat /etc/hosts.deny
+   16  vi /etc/sudoers
+   17  vi /etc/ssh/sshd_config 
+   18  service sshd restart
+   19  passwd
+   20  exit
+   21  history
+   22  hostname
+   23  cat /etc/hosts
+   24  hostname 192.81.215.71
+   25  hostname 
+   26  vi /etc/hosts
+   27  hostname -show
+   28  hostname --show
+   29  ls
+   30  env | grep -i history
+   31  vi /etc/yum.repos.d/10gen.repo
+   32  cd
+   33  yum install mongo-10gen mongo-10gen-server
+   34  vi /etc/init.d/mongod 
+   35  service mongod start
+   36  cat /var/log/mongo/mongod.log 
+   37  ps awux | grep mongo
+   38  mongo
+   39  vi /etc/mongod.conf 
+   40  ls -l
+   41  df
+   42  vi /etc/mongod.conf 
+   43  ls /var/lib/mongo/
+   44  ls
+   45  yum -y -install python-devel python-setuptools
+   46  yum -y install python-devel python-setuptools
+   47  yum -y install nginx
+   48  history > hist.txt
+   49  vi hist.txt 
+   50  yum -y install postfix
+   51  vi /etc/postfix/*cf
+   52  domainname
+   53  domainname 192.81.215.71
+   54  vi /etc/postfix/*cf
+   55  yum -y install vim git
+   56  vi /etc/postfix/*cf
+   57  ps awux | grep smtp
+   58  mail strangest@comcast.net
+   59  yum -y install mail
+   60  yum -y install mailtools
+   61  yum install mailx
+   62  mail strangest@comcast.net
+   63  vi /var/log/maillog 
+   64  mail gloriajw66@gmail.com
+   65  mail
+   66  hsitory
+   67  history
+   68  history > hist.txt 
+   69  vi hist.txt 
+   70  history
+   71  easy_install flask
+   72  easy_install pymongo
+   73  cd /usr/local
+   74  ls
+   75  mkdir DataAnywhere
+   76  chown gloriajw:dev DataAnywhere/
+   77  chmod -R g+w DataAnywhere/
+   78  cd DataAnywhere/
+   79  ls -la
+   80  ls -ld
+   81  yum -y install git
+   82  git init DataAnywhere1
+   83  cd DataAnywhere1/
+   84  cd .git/
+   85  ls
+   86  mv * ..
+   87  ls
+   88  cd ..
+   89  rm -rf .git/
+   90  ls
+   91  pwd
+   92  cd ..
+   93  mv DataAnywhere1/ DA1_repo
+   94  ls
+   95  service mongodb start
+   96  cat /var/log/mongo/mongod.log \
+   97  cat /var/log/mongo/mongod.log 
+   98  ps awux | grep mongo
+   99  ls
+  100  service nginx start
+  101  ps awux | grep ng
+  102  iptables -L
+  103  firewall-cmd
+  104  yum -y install firewall-cmd
+  105  yum -y install shorewall
+  106  vim /etc/shorewall/shorewall.conf 
+  107  vim /etc/shorewall/zones 
+  108  vim /etc/shorewall/interfaces 
+  109  vim /etc/shorewall/policy 
+  110  vim /etc/shorewall/rules 
+  111   service shorewall start 
+  112  cat /var/log/shorewall-init.log 
+  113  vi /etc/shorewall/zones 
+  114   service shorewall start 
+  115  cat /var/log/shorewall-init.log 
+  116  yum -y install system-confog-filewall
+  117  yum -y install system-config-filewall
+  118  yum -y install system-config-firewall
+  119  vi /etc/sysconfig/iptables-config 
+  120  vi /etc/sysconfig/iptables
+  121  service iptables save
+  122  service iptables start
+  123  service iptables save
+  124  ps awux | grep iptables
+  125  service iptables save
+  126  service iptables start
+  127  service iptables restart
+  128  service iptables save
+  129  vi /etc/sysconfig/iptables
+  130  system-config-firewall
+  131  cat /etc/hosts.deny
+  132  ls
+  133  cd
+  134  history > hist2.txt
+  135  exit
+  136  ls
+  137  vi notes
+  138  vi /usr/local/DataAnywhere/DA1_repo/config 
+  139  vi notes
+  140  exit
+  141  cd /
+  142  du -sh *
+  143  cd /var/lib/
+  144  ls
+  145  du -sh *
+  146  cd mongo/
+  147  ls
+  148  du -sh *
+  149  mongo
+  150  yum -y install uwsgi
+  151  easy_install uwsgi
+  152  hsitory
+  153  history
+  154  history > a
