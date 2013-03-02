@@ -1,4 +1,5 @@
 import sys
+import math
 import datetime
 from bson import ObjectId
 from flask import Flask,render_template,request,jsonify
@@ -44,7 +45,7 @@ def by_ym(year,month):
     request_dict = {}
     if year:
         request_dict['year'] = year
-    results = [x for x in config.weather_collection.find(request_dict).limit(10000)]
+    results = [x for x in config.weather_collection.find(request_dict).limit(50000)]
 
     for r in results:
         for x,y in r.items():
@@ -66,6 +67,46 @@ def by_ym(year,month):
 
     return jsonify(items=results)
     #return render_template('nonexistent.html', items=items)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@app.route('/temp/<string:c_or_f>/<float:temperature_f>/',methods=['GET'])
+@app.route('/temp/<string:c_or_f>/<int:temperature_f>/',methods=['GET'])
+def by_temp(c_or_f,temperature_f):
+    request_dict = {}
+    #request['temps_%s' % c_or_f] = {'$gt':math.ceil(temperature_f),'$lte':math.floor(temperature_f)}
+    request_dict['temps_%s' % c_or_f] = {'$gt':math.ceil(temperature_f) + 0.5,'$lte':math.floor(temperature_f) - 0.5}
+
+    results = [x for x in config.weather_collection.find(request_dict).limit(10000)]
+
+    for r in results:
+        for x,y in r.items():
+            if type(y) in (datetime.datetime,ObjectId):
+               r[x] = str(y)
+
+    outbound = []
+    for r in results:
+        for month in xrange(12):
+            if math.floor(temperature_f) - 0.5 < r['temps_f'][month] < math.ceil(temperature_f) + 0.5:
+                outbound.append(
+                    {'_id':r['_id'],'year':r['year'],'location':r['location'],
+                     'precip_mm month %d' % month:r['precips_mm'][month],
+                     'temp_f month %d' % month:r['temps_f'][month],'temp_c month %d' % month:r['temps_c'][month]
+                        }
+                    )
+    results = outbound
+
+    if request_wants_json():
+        return jsonify(items=results)
+
+    return jsonify(items=results)
+    #return render_template('nonexistent.html', items=items)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@app.route('/temp/<string:c_or_f>/-<float:temperature_f>/',methods=['GET'])
+@app.route('/temp/<string:c_or_f>/-<int:temperature_f>/',methods=['GET'])
+def by_neg_temp(c_or_f,temperature_f):
+    temperature_f = -temperature_f
+    return by_temp(c_or_f,temperature_f)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

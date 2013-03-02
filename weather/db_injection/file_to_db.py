@@ -45,6 +45,8 @@ class WeatherData(object):
 
         self.weather_collection.create_index([("year", pymongo.ASCENDING)])
         self.weather_collection.create_index([("location", pymongo.GEO2D)])
+        self.weather_collection.create_index([("temp_f", pymongo.ASCENDING)])
+        self.weather_collection.create_index([("temp_c", pymongo.ASCENDING)])
 
     def update_precip(self):
         for f in self.precip_files:
@@ -76,11 +78,15 @@ class WeatherData(object):
 
         self.weather_collection.create_index([("year", pymongo.ASCENDING)])
         self.weather_collection.create_index([("location", pymongo.GEO2D)])
+        self.weather_collection.create_index([("temp_f", pymongo.ASCENDING)])
+        self.weather_collection.create_index([("temp_c", pymongo.ASCENDING)])
 
     def just_index(self):
         print "indexing..."
         self.weather_collection.ensure_index([("year", pymongo.ASCENDING)])
         self.weather_collection.ensure_index([("location", pymongo.GEO2D)])
+        self.weather_collection.ensure_index([("temp_f", pymongo.ASCENDING)])
+        self.weather_collection.ensure_index([("temp_c", pymongo.ASCENDING)])
         print "done"
 
 if __name__ == "__main__":
