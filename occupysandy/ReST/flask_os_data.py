@@ -21,7 +21,7 @@ def request_wants_json():
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@app.route('/<string:region>/<string:fields_values>',methods=['GET'])
+@app.route('1/<string:region>/<string:fields_values>',methods=['GET'])
 def query_region(region,fields_values):
    
     request_dict = parse_fields_values(fields_values)
@@ -43,13 +43,15 @@ def query_region(region,fields_values):
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@app.route('/test/<string:fields_values>',methods=['GET'])
-def query_region(region,fields_values):
+@app.route('/2/<string:fields_values>',methods=['GET'])
+def query_structure(fields_values):
    
     request_dict = parse_fields_values(fields_values)
 
     #search data for request dictionary
     results = [x for x in config.sandy_collection.find(request_dict).limit(50000)]
+        
+    outbound = []
 
     #convert date and object ID to string
     for r in results:
@@ -57,46 +59,40 @@ def query_region(region,fields_values):
             if type(y) in (datetime.datetime,ObjectId):
                r[x] = str(y)
 
-    outbound = []
-    for r in results:
         
         structure = {
-                'id':r.pop['gid'],
-                'timestamp':r.pop['timestamp'],
-                'date':r.pop['date'],
+                'id':r.pop('gid',None),
+                'timestamp':r.pop('timestamp',None),
+                'date':r.pop('date',None),
                 'contact':{
-                    'first-name':r.pop['first-name'],
-                    'last-name':r.pop['last-name'],
-                    'phone':r.pop['phone'],
-                    'email':r.pop['email']
-                    'contact-lang':r.pop['contact-lang']
-                    'contact-origin':r.pop['contact-origin']
+                    'first-name':r.pop('first-name',None),
+                    'last-name':r.pop('last-name',None),
+                    'phone':r.pop('phone',None),
+                    'email':r.pop('email',None),
+                    'contact-lang':r.pop('contact-lang',None),
+                    'contact-origin':r.pop('contact-origin',None)
                 },
                 'sandy':{
-                    'resident-during-sandy':r.pop['resident-during-sandy'],
-                    'city':r.pop['city'],
-                    'state':r.pop['state'],
-                    'zip':r.pop['zip'],
+                    'resident-during-sandy':r.pop('resident-during-sandy',None)
                 },
                 'location':{
-                    'street':r.pop['street'],
-                    'city':r.pop['city'],
-                    'state':r.pop['state'],
-                    'zip':r.pop['zip'],
+                    'street':r.pop('street',None),
+                    'city':r.pop('city',None),
+                    'state':r.pop('state',None)
                 },
                 'home':{
-                    'occupant-count':r.pop['occupant-count'],
-                    'rent-or-own-1':r.pop['rent-or-own-1'],
-                    'rent-or-own-2':r.pop['rent-or-own-2'],
-                    'resident':r.pop['resident'],
-                    'residence-other':r.pop['residence-other'],
-                    'have-children':r.pop['have-children'],
-                    'have-seniors':r.pop['have-seniors'],
-                    'have-disabled':r.pop['have-disabled'],
+                    'occupant-count':r.pop('occupant-count',None),
+                    'rent-or-own-1':r.pop('rent-or-own-1',None),
+                    'rent-or-own-2':r.pop('rent-or-own-2',None),
+                    'resident':r.pop('resident',None),
+                    'residence-other':r.pop('residence-other',None),
+                    'have-children':r.pop('have-children',None),
+                    'have-seniors':r.pop('have-seniors',None),
+                    'have-disabled':r.pop('have-disabled',None),
                     'damage':{
-                        'house-has-damage':r.pop['house-has-damage'],
-                        'need-help-repair':r.pop['need-help-repair'],
-                        'house-has-mold':r.pop['house-has-mold'],
+                        'house-has-damage':r.pop('house-has-damage',None),
+                        'need-help-repair':r.pop('need-help-repair',None),
+                        'house-has-mold':r.pop('house-has-mold',None)
                     }
                 }
             }
