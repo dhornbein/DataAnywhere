@@ -21,7 +21,7 @@ def request_wants_json():
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@app.route('1/<string:region>/<string:fields_values>',methods=['GET'])
+@app.route('/1/<string:region>/<string:fields_values>',methods=['GET'])
 def query_region(region,fields_values):
    
     request_dict = parse_fields_values(fields_values)
@@ -100,14 +100,17 @@ def query_structure(fields_values):
         structure['other'] = {}
         for x,y in r.items():
             structure['other'][x] = y
-        
+       
+	# Remove None values 
+	structure.update((k, v) for k, v in structure.iteritems() if v is not None)
+
         outbound.append(structure)
 
 
     if request_wants_json():
         return jsonify(items=outbound)
 
-    return jsonify(items=results)
+    return jsonify(items=outbound)
     #return render_template('nonexistent.html', items=items)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
