@@ -49,7 +49,7 @@ if __name__ == '__main__':
 		'Is the water clean?' : 'have-water-potable',
 		'Are there children living here?' : 'have-children',
 		'Are there senior citizens living here?' : 'have-seniors',
-		'Are there disabled people living here?' : 'have-seriors',
+		'Are there disabled people living here?' : 'have-disabled',
 		'What is your country of origin?' : 'contact-origin',
 		'Did you stay at home during Sandy?' : 'resident-during-sandy',
 		'Was your house damaged?' : 'house-has-damage',

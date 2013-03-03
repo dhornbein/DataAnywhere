@@ -19,7 +19,7 @@ def parse_fields_values(fields_values):
     for fv_pair in fv_pairs:
 
         # sometimes value will be empty string
-        if '=' in fv_pair: field,value = fv_pair.split('=')
+        if '=' in fv_pair: field,value = fv_pair.split('=', 1)
         else: field, value = fv_pair, ''
 
         if field not in os_data_conf.instructions:
