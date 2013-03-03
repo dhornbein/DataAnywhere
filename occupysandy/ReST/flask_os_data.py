@@ -23,7 +23,7 @@ def request_wants_json():
 
 @app.route('/1/<string:region>/<string:fields_values>',methods=['GET'])
 def query_region(region,fields_values):
-   
+
     request_dict = parse_fields_values(fields_values)
 
     #search data for request dictionary
@@ -45,12 +45,11 @@ def query_region(region,fields_values):
 
 @app.route('/2/<string:fields_values>',methods=['GET'])
 def query_structure(fields_values):
-   
     request_dict = parse_fields_values(fields_values)
 
     #search data for request dictionary
     results = [x for x in config.sandy_collection.find(request_dict).limit(50000)]
-        
+
     outbound = []
 
     #convert date and object ID to string
@@ -78,7 +77,7 @@ def query_structure(fields_values):
                 'location':{
                     'street':r.pop('street',None),
                     'city':r.pop('city',None),
-                    'state':r.pop('state',None)
+                    'state':r.pop('state',None),
                     'zip':r.pop('zip',None)
                 },
                 'home':{
@@ -109,9 +108,10 @@ def query_structure(fields_values):
 
 
     if request_wants_json():
-        return jsonify(result-total=len(results),items=outbound)
+        return jsonify(items=outbound)
 
-    return jsonify(result-total=len(results),items=outbound)
+    #return jsonify(items=outbound)
+    return jsonify(count=str(len(results)),items=outbound)
     #return render_template('nonexistent.html', items=items)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
