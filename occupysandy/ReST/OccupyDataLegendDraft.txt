@@ -1,0 +1,110 @@
+NOTES and CONVENTIONS for COLUMN HEADERS for use in LEGEND
+1. All lc, even abbrevations (e.g. FEMA)
+2. No spaces, use dashes
+3. Column name convention is VERB + (NOUN + ADJ?)+ with most general noun first then less specific nouns
+4. Naming convention allows, e.g, decorator that retrives all need fields, and then can refine from general to specific
+5. Exception to #3: initial 'note' is a prose note field. Note is first so as not to clutter retriveval as in rule #4.
+6. Exception to #3: initial 'project' is a column header that can only be fully understood by consulting subject matter expert from projects
+7. Implied subject of all #3 sentences is the contact, e.g. have-electricity means The contact being interviewed has electricity.
+8. All have and need columns have Boolean values. All past tense verbs (registered) have Boolean values.
+
+anon_NJ1.csv,anon_RH.csv,anon_Rockaways1.csv,anon_Rockaways2.csv,anon_Rockaways3.csv,anon_Rockaways4.csv,anon_Rockaways5.csv,anon_SI1.csv,PROPOSED anon_SI.csv,NOTES,anon_SI2.csv,PROPOSED anon_s12.csv,NOTES
+gid,# of Adults,Timestamp,gid,gid,gid,gid,gid,gid,LC, dash separator,gid,gid,
+Timestamp,# of Children,Date,Timestamp,Timestamp,Last Followup,Timestamp,timestamp,timestamp,Date is the date of contact,Timestamp,timestamp,
+Date,# of Meals Delivered,Hub,Date,Date,Resolved,Date,Date,dateFOR DISPATCH ON SAT, 11/17 - RED = PRIORITY,???,Don't understand
+Number in Household,# of Pets,Zone,Zone,Street,Emergency,Zone,Zone,project-zone,Talk to project person for semantics!!,Database ID,gid,
+City,# of Seniors,Address,# Occupants,Is anyone immobile,TRACKING,# Occupants,Preferred Language (if translator needed)?,contact-lang,Contact, client, etc. NULL if no translator needed,Status - OK, Sent, No Access, In Need,action-status,Action probably generic across projects, but values are not (e.g. send).
+State,Activity Scale,Medical Needs,Medical Needs,#Children in house,Timestamp,Medical Needs,City,citylabor reportback
+Zip,Best time to visit,#Homebound,Any Seniors,#Seniors in House,Date,Any Seniors,State,statesupply reportback
+How urgent are the needs in your community?,Block,#Seniors,Any Homebound?,Age notes,Hub,Any Homebound?,Zipcode,zipcalled -- appointment,ca,
+How urgent are your needs?,Borough,#Children,Any children?,Do you Need Medical Attention?,Zone,Any children?,# of Occupants,occupant-count,Occupants in contact's living space,Neighborhood,project-neighborhood,
+Which needs are most urgent?,Building Type,Medical Attention Needed?,Notes on medical needs,Do you need prescriptions filled?,Empty Home:,Notes on medical needs,Are you living here now?,residentCanvas Date,date,Date is the date of contact
+Do you have medical issues that need to be addressed?,Contact Type,Called Hotline,Housing Needs,Do you have gas?,Not Home,Housing Needs,Rent or Own?,rent-or-own-1House #
+Do you have medical insurance?,Date Electricity Restored,Residency,Basic Conditions,Do you have running water?,Vacant,Basic Conditions,Rent or Own? 2,rent-or-own-2,Uncertain of semantics of 2 field,Labor Needs,need-labor,
+Are you interested in receiving resources regarding emotional wellbeing and mental health?,Date Gas Restored,Outages,Home Damage,Do you Need,Name 2,Home Damage,If not here, where are you staying?,residence-otherDo you have tools and supplies? If not, what do you think we will need.,note-needs-tools-supplies,
+Have you been displaced from your home?,Date Scheduled,Damage,Repairs Needed,Do you rent or own?,Phone 2,Repairs Needed,Do you need a safe place to sleep?,need-shelter,WATCH VERBS with boolean values i.e. don't pick verbs that swap T and F!,Notes,note-info,
+Is your current housing situation safe and stable?,Days without electric,Repairs,Financial and Housing Resources,Have you talked to FEMA?,MEDICAL NEEDS,Financial and Housing Resources,Does anyone in your household need food?,need-food,Needs, haves, wants are of contact.,What services of yours are currently working?,NOT FINISHED,NOT FINISHED
+RESIDENCY:  Are you a:,Days without heat,Housing Notes,Housing notes:,Is your basement or house flooded?,AT RISK INDIVIDUALS,Housing notes:,Do you have electricity?,have-electricityDoes owner have flood insurance?
+Do you have insurance?,Demolition,Construction help needed,Legal Needs,Do you need demo or clear-out?,Homebound,Legal Needs,Do you have water?,have-waterOwner's Signature Rec'd?
+BASIC CONDITIONS:  Are you without:,FEMA_Comment,Called Construction Hotline,Rent Payment  Issue,Do you have insurance?,Seniors,Rent Payment  Issue,Do you have heat?,have-heatColumn
+REPAIRS:  Do you need help with:,FEMA_ID#,Legal Needs,Public Assistance Status,Do you have electricity?,Children,Public Assistance Status,Do you have plumbing?,have-plumbingCrew Leader
+Do you need volunteers?,FEMA_Status,Damages,Damage to you,Do you have heavy items to be removed?,# Homebound,Damage to you,Is the water clean?,have-water-potableAnything else we need to know?
+Does your community need volunteers?,File UpToDate?,Legal Notes,Insurance Claim Status,Do you need cleaning / cleaning supplies?,# Seniors,Insurance Claim Status,Are there children living here?,have-childrenWhat time can we call you?
+Would you like to help coordinate volunteers in your community?,First Encounter,legal help needed,Motrgage issues,Notes,# Children,Motrgage issues,Are there senior citizens living here?,have-seniorsWhat time can we call you? 2
+Do you need supplies?,Flood Insurance_Had Before,called legal hotline,Legal NotesNOTES,Legal Notes,Are there disabled people living here?,have-seriorsWhat times work for you for coming to your place for labor?
+What supplies do you need?,Flood Insurance_Has Now,Want to volunteer?>>> ACTION TAKEN ON MEDICAL NEEDS <<<What is your country of origin?,contact-origin
+Please list any other organizations doing disaster relief work in your area:,Followup Canvass,What Jobs have you had ?\\ MEDICAL ACTIONDid you stay at home during Sandy?
+How else can we help?,Food Stamps,SkillsMedical attention neededWas your house damaged?,house-has-damage
+DAMAGES: Did Sandy impact your,Generator_Days,Meetings and actionsDistributed flierDo you have a mold problem?,house-has-mold
+FEMA,Generator?,Common concernsCalled hotlineDo you need help with repairs?,need-help-repair
+INSURANCE: Need help filing an insurance claim?,Heater,Follow up notes:HOUSING NEEDSDoes anyone in your household need medical attention?,need-medical
+MORTGAGE: Having problems paying mortgage?,Homebound?,Other NotesRESIDENCYIs anyone at home feeling stressed out?,have-stress
+PUBLIC ASSISTANCE:  Need help with:,Landlord_Tenant DisputeNeeds shelterDoes anyone need to speak with a lawyer?,need-lawyer
+LEGAL:  Do you need legal assistance?,LanguageStayingDoes anyone need to speak with a lawyer? 2,need-lawyer-2
+TENANTS RIGHTS: Are you having problems with your landlord?,Legal AssistanceRentDid you receive Disaster Food Stamps?,have-food-stamps,Are disaster food stamps food stamps? I said yes
+IMMIGRATION RIGHTS:  Has your immigration status prevented you from seeking assistance?,Location NameOwnDo you need help with unemployment benefits?,need-help-unemployment
+IMMIGRATION RIGHTS: Have you been discriminated against?,Lost JobOUTAGES (BASIC CONDITIONS)Have you registered with FEMA?,registered-fema,No is verb? Probably not
+ANIMALS:  Do you have pets?,LotWithout electricityDid you receive a check from FEMA?,have-payment-fema
+ANIMALS:  Lost pets?,MedicalWithout waterDid you receive all the funds you believe you should have received from FEMA?,have-payment-fema-ok
+ANIMALS:  Do you need a veterinarian?,Missing_ContactInfoWithout gasDid you apply for an SBA loan?,applied-sba
+ANIMALS:  Do you need pet supplies?,Project_IDWithout sewageIf you didn,??t apply for an SBA loan, was it because you were:,note-applied-sba,note first so filter out from decator, ask explicitly
+ENVIRONMENT:  Would you like to get involved in environmental and/or climate change projects?,PU CountDAMAGEName of insurers:,contact-insurer
+SOCIAL/ECONOMIC JUSTICE:  Would you like to get involved in social/economic justice projects?,PU Most Recent TSFloodingDid you file an insurance claim?,filed-insurance-claim
+EMPLOYMENT:  Would you like Occupy Sandy to help you find work?,RapidRepairs_CommentWater damageDo you have flood insurance?,have-insurance-flood
+Would you be interested in helping to start a worker-owned business?,RapidRepairs_Enrolled?MoldHave you received your flood insurance payment?,have-insurance-flood-payment
+If so, what are your interests and/or areas of expertise?,Rebuilding Together ApplicationDamaged roofDid the payment cover all repairs?,have-insurance-flood-payment-ok
+,RebuildingTogether_Applied?Damaged electricalIf insurance payment was insufficient, or claim denied, did you file an appeal?,have-insurance-flood-payment-appeal
+,Relationship to Primary ContactIf insurance payment was insufficient, or claim denied, did you file an appeal? 2,have-insurance-flood-payment-appeal-2
+,Scheduled volunteersREPAIRSWould you accept help from an attorney with filing an insurance appeal?,need-insurance-flood-payment-lawyer
+,Scheduled_WorkNeededCleaningAre you having mortgage problems?,have-mortage-problem
+,Scheduled?Mold remediationDo you need legal help with lender problems?,need-loan-lawyer
+,Sheetrock_CommentGuttingDid you receive FEMA rental assistance to help you with leasing a temporary or permanent apartment?,have-payment-fema-rental
+,Sheetrock_QuantityRepairing roofDid you rent out any part of your home pre-Sandy?,house-rental-by-owner,Not sure about this field name
+,Sheetrock_SizeElectricalWould you be interested in attending a community meeting?,interested-attend-meeting,Dubious about this one...
+,StatusNOTESWhat is your greatest need?,note-need-greatest
+,Time Scheduled>>> ACTION ON HOUSING NEEDS <<<Response,????
+,Unemployed\\ HOUSING ACTIONStickers on house?,have-house-sticker
+,Utilities notesShelter neededIf free non-perishable food was available ongoing in your community, would this be helpful?,need-food-nonperishable
+,Work Needs_AssessedCalled shelter hotlineAny specific details for medical attention?,note-need-medical
+,Work Needs_OutstandingConstruction help neededWere you told not to register FEMA or not allowed to register with FEMA?,register-fema-denied
+,zzONECalled construction hotlineWould you accept help from an attorney for your FEMA appeal?,need-fema-appeal-lawyer
+LEGAL NEEDSWas any portion of this house used as a rental unit pre-Sandy?,house-rental
+RED TAPEIf not, do you need FEMA rental assistance to help you with leasing a temporary or permanent apartment?,need-rental-assistance-fema
+FEMACONTACT INFO NOTES,note-contact
+NYCHABASIC INFO NOTES,note-info,Use this for generic.
+Public AssistanceFEMA/SBA NOTE,note-fema-sba
+LandlordINSURANCE NOTES,note-insurance
+Insurance ClaimsHOUSING NOTESanon_Rockaways1.csv,note-housing
+Mortgage PaymentsOTHER NOTES,note-other,Another mess
+Landlord Name:What subject(s) do these additional notes apply to?,note-other-subjects,Denormalized!!
+Insurance Company Name:Zone Number,project-zone-number
+Mortgage Lender Name:
+Public Assistance Type:
+DAMAGES
+Work
+Property
+Business
+NOTES
+>>> ACTION TAKEN ON LEGAL NEEDS <<<
+\\ LEGAL ACTION
+Legal support needed
+Called hotline
+\\ ORGANIZING
+Want to volunteer
+What jobs have you had
+Special skills
+Construction
+Computers
+Teaching
+Meetings/Actions
+Organize meeting
+Attend meeting
+Organize action
+Attend action
+Potential leader
+Why
+Common concerns in community:
+Notes:
+GENERAL NOTES
+Any additional needs or information not captured above
+Address 2
