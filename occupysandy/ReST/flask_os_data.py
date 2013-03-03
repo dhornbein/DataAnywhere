@@ -22,8 +22,7 @@ def request_wants_json():
 
 @app.route('/<string:region>/<string:fields_values>',methods=['GET'])
 def query_region(region,fields_values):
-
-    
+   
     request_dict = parse_fields_values(fields_values)
 
     results = [x for x in config.sandy_collection.find(request_dict).limit(50000)]
@@ -32,16 +31,6 @@ def query_region(region,fields_values):
         for x,y in r.items():
             if type(y) in (datetime.datetime,ObjectId):
                r[x] = str(y)
-
-    #if month in xrange(13):
-    #    outbound = []
-    #    for r in results:
-    #        outbound.append(
-    #            {'_id':r['_id'],'year':r['year'],'location':r['location'],
-    #             'precip_mm':r['precips_mm'][month],
-    #             'temp_f':r['temps_f'][month],'temp_c':r['temps_c'][month]}
-    #            )
-    #    results = outbound
 
     if request_wants_json():
         return jsonify(items=results)
