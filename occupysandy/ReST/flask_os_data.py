@@ -43,13 +43,17 @@ def query_region(region,fields_values):
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+@app.route('/2/',methods=['GET'])
 @app.route('/2/<string:fields_values>',methods=['GET'])
-def query_structure(fields_values):
-    request_dict = parse_fields_values(fields_values)
+def query_structure(fields_values = False):
+    if fields_values:
+        request_dict = parse_fields_values(fields_values)
 
-    #search data for request dictionary
-    results = [x for x in config.sandy_collection.find(request_dict).limit(50000)]
-
+        #search data for request dictionary
+        results = [x for x in config.sandy_collection.find(request_dict).limit(50000)]
+    else:
+        results = [x for x in config.sandy_collection.limit(50000)]
+    
     outbound = []
 
     #convert date and object ID to string
@@ -93,6 +97,14 @@ def query_structure(fields_values):
                         'house-has-damage':r.pop('house-has-damage',None),
                         'need-help-repair':r.pop('need-help-repair',None),
                         'house-has-mold':r.pop('house-has-mold',None)
+                    },
+                'notes':{
+                    'note-contact':r.pop('note-contact',None),
+                    'note-info':r.pop('note-info',None),
+                    'note-fema-sba':r.pop('note-fema-sba',None),
+                    'note-insurance':r.pop('note-insurance',None),
+                    'note-housing':r.pop('note-housing',None),
+                    'note-other':r.pop('note-other',None)
                     }
                 }
             }
@@ -110,7 +122,6 @@ def query_structure(fields_values):
     if request_wants_json():
         return jsonify(items=outbound)
 
-    #return jsonify(items=outbound)
     return jsonify(count=str(len(results)),items=outbound)
     #return render_template('nonexistent.html', items=items)
 
