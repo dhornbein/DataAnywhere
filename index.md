@@ -40,6 +40,15 @@ Data Anywhere can be broken down into three distinct sections:
 
 Each step will initially be very hands on. As standards are developed common libraries can be created to manage each step.
 
+## [Server Setup](./server_setup.html)
+
+The current strategy is to set up an off-the-shelf VPS server running either Ubuntu or Fedora.
+
+Detailed instructions on [server setup](./server_setup.html)
+
+## [Data Import](./data_import.html)
+
+Data import
 
 [1]: http://occupydatanyc.org/2013/03/03/data-anywhere-project-hackathon-day-two/
 [2]: http://occupydatanyc.org/2013/02/12/open-data-project/
