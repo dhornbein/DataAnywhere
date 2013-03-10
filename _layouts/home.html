@@ -9,11 +9,10 @@
 			{{ content }}
 		</div>
 		<div class="large-2 small-12 column">
-			<ul class="side-nav">
-				<li><a href="./">Home</a></li>
-				<li><a href="./setup.html">Setup</a></li>
-				<li class="divider"></li>
-				<li><a href="./server_setup.html">Server Setup</a></li>
+			<ul class="side-nav affix" data-spy="affix" data-offset-top="200">
+			{% for page in site.pages %}
+				<li><a data-magellan-arrival="{{ page.id }}" href="{{ site.base_url }}{{ page.url }}">{{ page.title }}</a></li>
+			{% endfor %}
 			</ul>
 		</div>
       </section>
