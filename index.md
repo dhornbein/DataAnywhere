@@ -339,7 +339,7 @@ if __name__ == '__main__':
     app.run(config.query_f_server,config.query_f_port)
 {% endhighlight %}
 
-(Drew:) Don't mind that second function, I'm just playing around with format, but this should be done on the database site.
+(Drew:) Don't mind that second function, I'm just playing around with format, but this should be done on the database side.
 
 Now we can ask our server for some data, like so:
 
