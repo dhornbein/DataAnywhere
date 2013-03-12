@@ -3679,6 +3679,7 @@ ul, ol {
 .banner {
   background-color: #37648D;
   color: #FFF;
+  padding: 1.5em 0;
   margin-bottom: 1.5em; }
   .banner h1, .banner h2, .banner h3, .banner h4, .banner h5, .banner h6 {
     color: inherit; }
