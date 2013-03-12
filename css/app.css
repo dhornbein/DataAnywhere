@@ -3710,3 +3710,9 @@ pre {
     color: inherit;
     padding: 0;
     border-radius: 0; }
+
+@media only screen and (min-width: 48em) {
+  .side-nav.affix {
+    background-color: #EEE;
+    position: fixed;
+    top: 0; } }
