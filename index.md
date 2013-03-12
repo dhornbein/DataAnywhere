@@ -5,7 +5,7 @@ title: Home
 
 ## Background
 
-The Data Anywhere project was developed at the [#OccupyDataNYC Hackathon][1] on March 1st & 2nd. Read the [project outline][2]. It is currently being tested for use with Hurricane Sandy relief around New York City as part of [#OccupySandy][3].
+The {{ site.projectname }} project was developed at the [#OccupyDataNYC Hackathon][1] on March 1st & 2nd. Read the [project outline][2]. It is currently being tested for use with Hurricane Sandy relief around New York City as part of [#OccupySandy][3].
 
 ### The problem
 
@@ -17,10 +17,10 @@ You can read more about this project on [Drew's Blog post][4].
 
 ## Solution
 
-Data Anywhere seeks to provide a simple, extend-able, single focus solution to storing, securing, and sharing any kind of data.
+{{ site.projectname }} seeks to provide a simple, extend-able, single focus solution to storing, securing, and sharing any kind of data.
 
 Here's a vague diagram outlining the collection of paper forms:  
-![Data Anywhere diagram](http://blog.dhornbein.com/wp-content/uploads/2013/03/dataanywhere_workflow_draf1.png)
+![{{ site.projectname }} diagram](http://blog.dhornbein.com/wp-content/uploads/2013/03/dataanywhere_workflow_draf1.png)
 
 1. Data is collected with a form based on community needs and collective data standards.
 2. Data is entered into a computer, digitized. If information is collected digitally this step is simplified.
@@ -32,7 +32,7 @@ Here's a vague diagram outlining the collection of paper forms:
 
 # [The System Set up](./setup.html)
 
-Data Anywhere can be broken down into three distinct sections:
+{{ site.projectname }} can be broken down into three distinct sections:
 
 1. **[Server Setup](./server_setup.html)** - Data stewards will need to configure a VPS (virtual private server)
 2. **[Data Import](./data_import.html)** - Taking non standard data from bizarre sources (initially with a focus on `.csv`) and import them into a **standardized** MongoDB data structure.

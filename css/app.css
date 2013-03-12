@@ -3688,6 +3688,10 @@ header .title {
   text-transform: uppercase;
   letter-spacing: 2px; }
 
+.side-nav.affix {
+  position: fixed;
+  top: 0; }
+
 code {
   font-weight: normal;
   background-color: #EEE;
