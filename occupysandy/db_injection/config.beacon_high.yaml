@@ -1,0 +1,150 @@
+# Data Anywhere config.yaml
+# This document provides meta data about columns in a spreadsheet (or database table)
+# Each "block" starts with the column header exactly as it appears in data table
+## Using a .csv? Run `build_config.py your_data.csv` to jump start the creation of this file!
+# You must indent each under the column header by at least one space
+# The only required item is `key:` this must have a unique value
+## The key should lower case and use-dashes-between-words, a good key is brief
+# Multiple categories should be [comma, seperated, in brackets
+# everything else is optional
+#
+# 	    key: question-key # (required) must be unique!
+#  readable: Human readable question? # (default: column header text)
+# normalize: answer-parse-function # (default: return value as str())
+#   private: bool # (default: False)
+#   default: value to query # (optional)
+#       n_a: bool # (default: True)
+#  category: single category or comma seperated in brackets [ medical , category name ]
+---
+no one home:
+ key: not-home
+ normalize: parseBool
+ private: True
+ n_a: False
+ category: contact
+
+name:
+ key: name
+ private: True
+ n_a: False
+ category: contact
+
+phone:
+ key: phone-primary
+ private: True
+ n_a: False
+ category: contact
+
+address:
+ key: address-primary
+ normalize: parseLocation
+ private: True
+ n_a: False
+ category: contact
+
+email:
+ key: email-primary
+ normalize: parseEmail
+ private: True
+ n_a: False
+ category: contact
+
+Is a translator needed:
+ key: need-translator
+ normalize: parseBool
+ private: True
+ category: contact
+
+Language:
+ key: contact-lang
+ private: True
+ n_a: True
+ category: contact 
+
+# shared questions
+Does anyone in your household want to speak to a physical or mental health care professional:
+ key: speak-medial
+ normalize: parseBool
+ category: medical
+
+Are you able to access health care when you need to:
+ key: access-medical
+ normalize: parseBool
+ category: medical
+
+# food/water
+Do you have running water:
+ key: have-water
+ normalize: parseBool 
+ n_a: True
+ category: water 
+
+Has your water been tested for contaminants:
+ key: tested-water
+ normalize: parseBool
+ n_a: True
+ category: water 
+
+Does anyone in your household need food:
+ key: need-food
+ normalize: parseBool
+ category: food
+
+# utilities
+Do you have functioning heat:
+ key: have-heat
+ normalize: parseBool
+ n_a: True 
+ category: utilities
+ 
+Do you have functioning electricity:
+ key: have-electricity
+ normalize: parseBool
+ n_a: True 
+ category: utilities 
+ 
+Do you have functioning gas:
+ key: have-gas
+ normalize: parseBool
+ n_a: True 
+ category: utilities 
+ 
+Do you have functioning phone:
+ key: have-phone
+ normalize: parseBool
+ n_a: True 
+ category: utilities 
+ 
+Do you have functioning plumbing/sewage:
+ key: have-plumbing
+ normalize: parseBool
+ n_a: True 
+ category: utilities 
+
+Do you have functioning hot water:
+ key: have-hot-water
+ normalize: parseBool
+ n_a: True 
+ category: utilities 
+
+# housing
+Are you in need of housing:
+ key: need-shelter
+ normalize: parseBool
+ n_a: True
+ category: housing
+
+Are you currently staying in temporary housing:
+ key: residence-temporary
+ normalize: parseMultiChoice
+ category: housing
+
+:
+ readable:
+ key:
+ normalize:
+ private: 
+ default:
+ n_a: 
+ category: 
+...
