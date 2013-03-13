@@ -1,0 +1,85 @@
+{
+	"common":[
+		{
+			"contact":{
+				"no one home":"",
+				"name-first":"",
+				"name-last":"",
+				"phone":"",
+				"address":"",
+				"email":"",
+				"is a translator needed":"",
+				"language":""
+			},
+			"assesment id":"",
+			"questions":{
+				"medical":{
+					"does anyone in your household want to speak to a physical or mental health care professional?":"",
+					"are you able to access health care when you need to?) (or has your access to healthcare been affected by the storm?)":"",
+					"do you have health insurance?":""
+				},
+				"food/water":{
+					"do you have running water?":"",
+					"is your tap water drinkable?":"",
+					"has your water been tested for contaminants?":"",
+					"do you have regular access to food when you need it?":""
+				},
+				"utilities":{
+					"have-heat":"",
+					"have-electricity":"",
+					"have-gas":"",
+					"have-phone":"",
+					"have-plumbing/sewage":"",
+					"have-hot-water":""
+				},
+				"shelter":{
+					"are you in need of housing":"",
+					"are you currently displaced or staying in temporary housing?":"",
+					"do you rent or own?":"",
+					"are you having issues with your landlord":"",
+					"was your home flooded":"",
+					"have you noticed any mold growing":"",
+					"how was it treated":"",
+					"is there any other damage still in need of demolition":"",
+					"is there any other damage still in need of repair":"",
+				},
+				"demographic":{
+					"any children living here":"",
+					"how many enrolled in school":"",
+					"ages":"",
+					"are there sufficient educational resources in your neighborhood":"",
+					"anyone over the age of 65":"",
+					"anyone with disabilities":"",
+					"what's your level of education":""
+				},
+				"legal":{
+					"would you like to speak to a legal professional about housing":"",
+					"would you like to speak to a legal professional about recovery assistance":"",
+					"would you like to speak to a legal professional about workplace":"",
+					"would you like to speak to a legal professional about immigration":""
+				},
+				"employment":{
+					"are you working temporarily":"",
+					"are you working part time":"",
+					"are you working full time":"",
+					"are you working not at all":"",
+					"has your employment been affected negatively by the storm":"",
+					"are there sufficient job opportunities in your neighborhood":""
+				},
+				"delivered assistance":{
+					"fema":{
+						"have you applied for fema":"",
+						"did you get sufficient help with fema":"",
+						"have you filed an appeal with fema":""
+					},
+					""
+					"have you applied for sba":"",
+					"did you get sufficient help with sba":"",
+					"have you filed an appeal with sba":"",
+					"":"",
+					"":"",
+				}
+			}
+		}
+	]
+}
