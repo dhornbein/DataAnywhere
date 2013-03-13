@@ -21,7 +21,7 @@ A group-writable umask allows other developers in your group to write to your fi
 
 > edit /etc/bashrc
 
-> if [ $UID -ne 0 ]; then
+    if [ $UID -ne 0 ]; then
        umask 002
 
 ### Add your username (and other developers usernames). Set a default password.
