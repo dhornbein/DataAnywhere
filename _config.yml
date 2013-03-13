@@ -1,3 +1,5 @@
 server_port:  5000
 auto: true
+projectname: Data Anywhere
 workingTitle: polymer
+baseurl: /DataAnywhere

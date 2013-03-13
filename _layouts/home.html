@@ -9,9 +9,12 @@
 			{{ content }}
 		</div>
 		<div class="large-2 small-12 column">
-			<ul class="side-nav affix" data-spy="affix" data-offset-top="200">
-			{% for page in site.pages %}
-				<li><a data-magellan-arrival="{{ page.id }}" href="{{ site.base_url }}{{ page.url }}">{{ page.title }}</a></li>
+			<ul class="side-nav affix" data-spy="affix" data-offset-top="219">
+			{% for child_page in site.pages reversed %}
+				<li{% if child_page.title == page.title %} class="active"{% endif %}><a data-magellan-arrival="{{ child_page.id }}" href="{{ site.baseurl }}{{ child_page.url }}">{{ child_page.title }}</a></li>
+				{% if child_page.title == 'Home' %}
+				<li class="divider"></li>
+				{% endif %}
 			{% endfor %}
 			</ul>
 		</div>

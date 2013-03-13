@@ -3679,6 +3679,7 @@ ul, ol {
 .banner {
   background-color: #37648D;
   color: #FFF;
+  padding: 1.5em 0;
   margin-bottom: 1.5em; }
   .banner h1, .banner h2, .banner h3, .banner h4, .banner h5, .banner h6 {
     color: inherit; }
@@ -3686,6 +3687,10 @@ ul, ol {
 header .title {
   text-transform: uppercase;
   letter-spacing: 2px; }
+
+.side-nav.affix {
+  position: fixed;
+  top: 0; }
 
 code {
   font-weight: normal;
@@ -3705,3 +3710,9 @@ pre {
     color: inherit;
     padding: 0;
     border-radius: 0; }
+
+@media only screen and (min-width: 48em) {
+  .side-nav.affix {
+    background-color: #EEE;
+    position: fixed;
+    top: 0; } }
