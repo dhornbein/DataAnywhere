@@ -1,8 +1,10 @@
 ---
 layout: home
-title: Data Import
+title: Server Setup
 ---
 
-# Data Import
+# Server Setup
 
 1. [Bash history of server setup](https://github.com/dhornbein/DataAnywhere/blob/master/occupysandy/system/latest_hist.txt)
+
+*More coming soon*
