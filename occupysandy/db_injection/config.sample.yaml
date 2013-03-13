@@ -1,0 +1,55 @@
+# Data Anywhere config.yaml
+# This document provides meta data about columns in a spreadsheet (or database table)
+# Each "block" starts with the column header exactly as it appears in data table
+## Using a .csv? Run `build_config.py your_data.csv` to jump start the creation of this file!
+# You must indent each under the column header by at least one space
+# The only required item is `key:` this must have a unique value
+## The key should lower case and use-dashes-between-words, a good key is brief
+# Multiple categories should be [comma, seperated, in brackets]
+#! BETTER SAFE THAN SORRY, wrap "your text in double quotes"
+---
+# This block is for one column
+# column header as it appears in the spreadsheet wrapped in quotes followed by a colon `:`
+"this is a column header": 
+
+ # each "key/value pair should be indented 1 space"
+ # (optional, default: column header text) The friendly question text if different from column header
+ readable: Human readable question? 
+
+ # machine text for the question, must be unique!
+ key: question-key 
+
+ # (default: return value as string) The normalize function to run on the value 
+ normalize: answer-parse-function 
+
+ # (default: False) is this question private?
+ private: False 
+
+ # (optional) default value to return in query if none is set
+ default: value to query 
+
+ # (default: True) accept n/a response?
+ n_a: True 
+
+ # (optional) categories group common items, if you want to have multiple categories: [comma, seperated, in brackets]
+ category: [medical,category name]
+
+#---------------------------------------------------------------------
+# This is the next column, note some items are missing, that's a-okay!
+this is a column header too:
+ readable: This is the human readable question?
+ key: question-key
+ normalize: answer-parse-function
+ category: utilities
+
+#---------------------------------------------------------------------
+#blank template
+:
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+...

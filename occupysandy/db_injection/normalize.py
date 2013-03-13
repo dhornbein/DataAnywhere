@@ -25,17 +25,17 @@ should test against common vernacular: yes, no, nope, yeah ...
 as well as: true, false, "0", "1" ...
 '''
 def parseBool(string):
-
+	None
 
 '''
 parseInt()
 string: possible integer value trapped in a string (or worse!)
 return: int OR string
 Takes one argument and attempts to convert it to an into
-an integer. If input can't be converted into an int return string
+an integer. If input can't be converted into an int return string.
 '''
 def parseInt(string):
-
+	None
 
 '''
 parseMultiChoice()
@@ -47,7 +47,7 @@ if limit is true it is expected to be a list of possible answers to limit
 the string to. If string is not in limit, return -1
 '''
 def parseMultiChoice(string, limit = False):
-	if string == '' : return Null
+	if string == '' : return None
 
 
 '''
@@ -59,7 +59,7 @@ mess with some semblance of a date structure... find the date or
 give up and return the original string
 '''
 def parseDate(date):
-
+	None
 
 
 '''
@@ -73,7 +73,7 @@ this string gets turned into geo data
 if anon is True then returned geo data should be obfuscated (generalized to neighborhood level)
 '''
 def parseLocation(string, anon = True):
-
+	None
 
 '''
 parseNotApplicable()
@@ -88,13 +88,17 @@ if string is not marked n/a return unaltered
 '''
 def parseNotApplicable(string, allowed = True):
 	#I'm giving this one a try for fun
-	synonym = { 'na' , 'n/a' , 'notapplicable' , 'not applicable' , 'not available', 'no answer' }
+	synonym = { 'na' , 'n-a' , 'n/a' , 'notapplicable' , 'not applicable' , 'not available', 'no answer' }
 	
-	if string == '':return string
-	if string.lower() in synonym:
+	if string.lower().strip() in synonym and string.strip() != '':
 		if allowed:
 			return 'n/a'
 		else:
-			return null
+			return None
 	else:
 		return string
+
+'''
+Can you think of any other parse functions?
+Add them and be automatically registered to win a high five
+'''

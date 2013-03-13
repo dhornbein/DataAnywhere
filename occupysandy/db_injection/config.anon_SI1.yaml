@@ -1,0 +1,624 @@
+# automagically compiled with `build_config.py` from anon_SI1.csv
+---
+"gid": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"timestamp": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Date": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Zone": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Preferred Language (if translator needed)?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"City": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"State": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Zipcode": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"# of Occupants": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Are you living here now?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Rent or Own?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Rent or Own? 2": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"If not here, where are you staying?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you need a safe place to sleep?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Does anyone in your household need food?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you have electricity?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you have water?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you have heat?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you have plumbing?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Is the water clean?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Are there children living here?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Are there senior citizens living here?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Are there disabled people living here?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"What is your country of origin?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you stay at home during Sandy?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Was your house damaged?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you have a mold problem?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you need help with repairs?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Does anyone in your household need medical attention?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Is anyone at home feeling stressed out?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Does anyone need to speak with a lawyer?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Does anyone need to speak with a lawyer? 2": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you receive Disaster Food Stamps?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you need help with unemployment benefits?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Have you registered with FEMA?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you receive a check from FEMA?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you receive all the funds you believe you should have received from FEMA?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you apply for an SBA loan?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"If you didn‚Äôt apply for an SBA loan, was it because you were:": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Name of insurers:": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you file an insurance claim?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you have flood insurance?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Have you received your flood insurance payment?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did the payment cover all repairs?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"If insurance payment was insufficient, or claim denied, did you file an appeal?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"If insurance payment was insufficient, or claim denied, did you file an appeal? 2": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Would you accept help from an attorney with filing an insurance appeal?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Are you having mortgage problems?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Do you need legal help with lender problems?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you receive FEMA rental assistance to help you with leasing a temporary or permanent apartment?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Did you rent out any part of your home pre-Sandy?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Would you be interested in attending a community meeting?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"What is your greatest need?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Response": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Stickers on house?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"If free non-perishable food was available ongoing in your community, would this be helpful?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Any specific details for medical attention?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Were you told not to register FEMA or not allowed to register with FEMA?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Would you accept help from an attorney for your FEMA appeal?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Was any portion of this house used as a rental unit pre-Sandy?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"If not, do you need FEMA rental assistance to help you with leasing a temporary or permanent apartment?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"CONTACT INFO NOTES": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"BASIC INFO NOTES": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"FEMA/SBA NOTE": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"INSURANCE NOTES": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"HOUSING NOTES": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"OTHER NOTES": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"What subject(s) do these additional notes apply to?": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+"Zone Number": 
+ readable:
+ key:
+ normalize:
+ private:
+ default:
+ n_a:
+ category:
+
+...
