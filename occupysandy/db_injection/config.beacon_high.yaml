@@ -139,7 +139,7 @@ Are you currently staying in temporary housing:
  normalize: parseMultiChoice
  category: housing
 
-:
+"":
  readable:
  key:
  normalize:

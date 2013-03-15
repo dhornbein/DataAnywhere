@@ -6,7 +6,7 @@ Included in this folder:
 * build_config.py
 * config.sample.yaml
 * normalize.py
-* load.py
+* load_data.py
 
 ## build_config.py
 
@@ -37,6 +37,6 @@ Each column header exists in this config like so:
  A group of functions that are to be run on data values. For instance `parseBool` will take an input string and map it to `True` or `False`
  if the string contains something that can be interperated as such. For instance a value of "yes", "y", or "true" will return `True`
 
- ## load.py
+ ## load_data.py
 
  This script loads the data file and config file then parses all the data into the MongoDB
