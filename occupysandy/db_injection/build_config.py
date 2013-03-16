@@ -15,8 +15,8 @@ import sys
 '''
 TODO: Import file from command line argument
 '''
-csv_file_name = 'anon_SI1.csv'
-raw_csv = './' + csv_file_name
+csv_file_name = 'test.csv'
+raw_csv = './raw_data/' + csv_file_name
 f = open(raw_csv, 'rt')
 
 '''

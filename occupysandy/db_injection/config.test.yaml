@@ -1,0 +1,77 @@
+# automagically compiled with `build_config.py` from test.csv
+---
+"name":
+ key: name
+ private: True
+ n_a: False
+ category: contact
+
+"phone":
+ key: phone-primary
+ private: True
+ n_a: False
+ category: contact
+
+"address":
+ key: address-primary
+ normalize: parseLocation
+ private: True
+ n_a: False
+ category: contact
+
+"email":
+ key: email-primary
+ normalize: parseEmail
+ private: True
+ n_a: False
+ category: contact
+
+"Is a translator needed":
+ key: need-translator
+ normalize: parseBool
+ private: True
+ category: contact
+
+"Language":
+ key: contact-lang
+ private: True
+ n_a: True
+ category: contact 
+
+# shared questions
+"Does anyone in your household want to speak to a physical or mental health care professional":
+ key: speak-medial
+ normalize: parseBool
+ category: medical
+
+"Are you able to access health care when you need to":
+ key: access-medical
+ normalize: parseBool
+ category: medical
+
+# food/water
+"Do you have running water":
+ key: have-water
+ normalize: parseBool 
+ n_a: True
+ category: water 
+
+"Has your water been tested for contaminants":
+ key: tested-water
+ normalize: parseBool
+ n_a: True
+ category: water 
+
+"Does anyone in your household need food":
+ key: need-food
+ normalize: parseBool
+ category: food
+
+# utilities
+"Do you have functioning heat":
+ key: have-heat
+ normalize: parseBool
+ n_a: True 
+ category: utilities
+
+...
