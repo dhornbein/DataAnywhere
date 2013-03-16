@@ -9,14 +9,18 @@
 
 # !!! this code is writen by an amature, please make it better, smarter, faster. -Drew
 
-import csv
-import sys
+import csv, sys, os
 
 '''
 TODO: Import file from command line argument
 '''
-csv_file_name = 'test.csv'
-raw_csv = './raw_data/' + csv_file_name
+if len(sys.argv) > 1:
+	raw_csv = sys.argv[1]
+else:
+	exit('Please supply path to file you want built')
+
+csv_file_name = os.path.splitext(os.path.basename(raw_csv))[0]
+
 f = open(raw_csv, 'rt')
 
 '''
@@ -62,9 +66,12 @@ out += "..." # denotes the end of a YAML file
 Write the YAML file
 TODO: handle existing versions of config file to prevent overwrite
 '''
-f = open('./config.' + csv_file_name[:csv_file_name.find('.csv')] + '.yaml','w')
+yaml_file = './config.' + csv_file_name + '.yaml'
+
+f = open(yaml_file,'w')
 
 try:
 	f.write(out)
 finally:
 	f.close()
+	print 'Created a wonderful new file: ' + yaml_file
