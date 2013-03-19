@@ -1,3 +1,7 @@
+'''
+These functions aren't needed any more. ../db_injection/normalize.py should be used to normalize inputs
+'''
+
 import functools
 
 class IgnoreField(StandardError): pass

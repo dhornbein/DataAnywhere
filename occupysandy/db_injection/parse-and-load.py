@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-15 -*-
 
+'''
+This is the old version of load_data.py
+'''
+
 from pymongo import MongoClient
 from pandas import read_csv
 from math import isnan
