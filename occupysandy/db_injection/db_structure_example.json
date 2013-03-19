@@ -1,28 +1,39 @@
 {
 	"common":[
 		{
-			"contact":{
-				"no one home":"",
-				"name-first":"",
-				"name-last":"",
-				"phone":"",
-				"address":"",
-				"email":"",
-				"is a translator needed":"",
-				"language":""
+			"private":{
+				"contact":{ 
+					"no one home":"",
+					"name-first":"",
+					"name-last":"",
+					"phone":"",
+					"address":"",
+					"email":"",
+					"is a translator needed":"",
+					"language":"",
+					"loc": [ "x" , "y" ]
+				}
+			},
+			"meta":{
+				"loc-anon": [ "x" , "y" ],
+				"survay-date":"",
+				"modified-date":"",
+				"import_src":"data_export.csv",
+				"import_src_hash":"MD5 hash of data source file",
+				"config":"name of questions config file"
 			},
 			"assesment id":"",
 			"questions":{
 				"medical":{
-					"does anyone in your household want to speak to a physical or mental health care professional?":"",
-					"are you able to access health care when you need to?) (or has your access to healthcare been affected by the storm?)":"",
-					"do you have health insurance?":""
+					"need-medical":"",
+					"have-medical":"",
+					"have-insurance":""
 				},
 				"food/water":{
-					"do you have running water?":"",
-					"is your tap water drinkable?":"",
-					"has your water been tested for contaminants?":"",
-					"do you have regular access to food when you need it?":""
+					"running-water":"",
+					"potable-water":"",
+					"water-tested":"",
+					"have-food":""
 				},
 				"utilities":{
 					"have-heat":"",
@@ -33,9 +44,9 @@
 					"have-hot-water":""
 				},
 				"shelter":{
-					"are you in need of housing":"",
-					"are you currently displaced or staying in temporary housing?":"",
-					"do you rent or own?":"",
+					"need-housing":"",
+					"residence-temporary":"",
+					"rent-or-own":"",
 					"are you having issues with your landlord":"",
 					"was your home flooded":"",
 					"have you noticed any mold growing":"",
@@ -66,18 +77,15 @@
 					"has your employment been affected negatively by the storm":"",
 					"are there sufficient job opportunities in your neighborhood":""
 				},
-				"delivered assistance":{
-					"fema":{
-						"have you applied for fema":"",
-						"did you get sufficient help with fema":"",
-						"have you filed an appeal with fema":""
-					},
-					""
+				"fema":{
+					"have you applied for fema":"",
+					"did you get sufficient help with fema":"",
+					"have you filed an appeal with fema":""
+				},
+				"sba":{
 					"have you applied for sba":"",
 					"did you get sufficient help with sba":"",
-					"have you filed an appeal with sba":"",
-					"":"",
-					"":"",
+					"have you filed an appeal with sba":""
 				}
 			}
 		}
