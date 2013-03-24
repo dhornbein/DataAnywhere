@@ -96,14 +96,13 @@ Create a directory under /usr/local. Call it DA, DataAnywhere, app, whatever you
 
 	sudo chgrp dev /usr/local/DA
 
-Set an htpasswd user/password for each person/org which will have access:
+Set an htpasswd user/password for each person/org which will have web access
+Note that peopl with web access do not need shell access. They only need to be added to this file:
 
 	cd /usr/local/DA
 
-	sudo htpasswd -c ./htpasswd your_username # -c means CREATE: only use it the first time.
+	# -c means CREATE: only use it the first time.
+	sudo htpasswd -c ./htpasswd your_username 
 
 	sudo htpasswd ./htpasswd another_username
 
-1. [Bash history of server setup](https://github.com/dhornbein/DataAnywhere/blob/master/occupysandy/system/latest_hist.txt)
-
-*More coming soon*
