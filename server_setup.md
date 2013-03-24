@@ -61,17 +61,24 @@ Note that ALL allows you to do all commands without restriction. You can restric
 
 	yum -y install fail2ban (or apt-get install fail2ban for Ubuntu/Debian OS)
 
-	edit /etc/fail2ban/jailconf
+	edit /etc/fail2ban/jail.conf
 
-	Change all instances of fail2ban@example.com to your email address.
+Change all instances of fail2ban@example.com to your email address.
 
-        Check log paths in this file, and make sure they point to /var/log/nignx, /var/log/secure, etc. accoring to what is being parsed. If these are incorrect, fail2ban should issue a warning upon startup, but check to be sure. fail2ban uses regex filters to look for attack patterns in log files, so it is essentail that it is looking in the right places. 
+        :1,$ s/fail2ban@example.com/you@your_email.org/g
+
+	:wq
+
+
+Check log paths in the /etc/fail2ban/jail.conf file, and make sure they point to /var/log/nignx, /var/log/secure, etc. accoring to what is being parsed. If these are incorrect, fail2ban should issue a warning upon startup, but check to be sure. fail2ban uses regex filters to look for attack patterns in log files, so it is essentail that it is looking in the right places. 
 
 Follow the instructions to add nginx to fail2ban: http://serverfault.com/questions/420895/how-to-use-fail2ban-for-nginx
 
 If this is too complex, leave fail2ban as-is, and at least it will protect against default attacks.
 
-	Restart fail2ban: /etc/init.d/fail2ban restart
+Restart fail2ban: 
+
+	/etc/init.d/fail2ban restart
 
 ### htpasswd
 
