@@ -36,15 +36,15 @@ Notice how the users belong to the group dev. This is important.
 
 This allows you to execute root commands without having to know the root password.
 
-> yum -y install sudo
+> 	yum -y install sudo
 
-> vi /etc/sudoers
+	vi /etc/sudoers
 
-> your_username	ALL=(ALL) 	ALL
+	your_username	ALL=(ALL) 	ALL
 
-> esc, then :w!
+	esc, then :w!
 
-> \:q
+	:q
 
 Note that ALL allows you to do all commands without restriction. You can restrict other user's access. See the sudo command syntax for details.
 
