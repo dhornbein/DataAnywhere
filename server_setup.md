@@ -13,22 +13,21 @@ These are optional but very highly recommended tools and tips to secure your ser
 
 A common group allows you and other developers to work together easily on the same machine, on common files. 
 
-> groupadd dev
+ 	groupadd dev
 
 ### Set umask
 
 A group-writable umask allows other developers in your group to write to your files. 
 
-> edit /etc/bashrc
+ 	edit /etc/bashrc
 
     if [ $UID -ne 0 ]; then
        umask 002
 
 ### Add your username (and other developers usernames). Set a default password.
 
-> adduser -g dev your_username && passwd your_username
-
-> adduser -g dev someone_else && passwd someone_else
+	adduser -g dev your_username && passwd your_username
+	adduser -g dev someone_else && passwd someone_else
 
 Notice how the users belong to the group dev. This is important.
 
@@ -36,7 +35,7 @@ Notice how the users belong to the group dev. This is important.
 
 This allows you to execute root commands without having to know the root password.
 
-> 	yum -y install sudo
+ 	yum -y install sudo
 
 	vi /etc/sudoers
 
@@ -50,41 +49,53 @@ Note that ALL allows you to do all commands without restriction. You can restric
 
 ### denyhosts
 
-> yum -y install denyhosts (or apt-get install denyhosts for Ubuntu/Debian OS)
+	yum -y install denyhosts (or apt-get install denyhosts for Ubuntu/Debian OS)
 
-> edit /etc/denyhosts.conf
+	edit /etc/denyhosts.conf
 
-> set this variable/value: BLOCK_SERVICE = ALL
+	set this variable/value: BLOCK_SERVICE = ALL
 
-> service denyhosts restart
+	service denyhosts restart
 
 ### fail2ban
 
-> yum -y install fail2ban (or apt-get install fail2ban for Ubuntu/Debian OS)
+	yum -y install fail2ban (or apt-get install fail2ban for Ubuntu/Debian OS)
 
-> edit 
+	edit /etc/fail2ban/jailconf
+
+	Change all instances of fail2ban@example.com to your email address.
+
+        Check log paths in this file, and make sure they point to /var/log/nignx, /var/log/secure, etc. accoring to what is being parsed. If these are incorrect, fail2ban should issue a warning upon startup, but check to be sure. fail2ban uses regex filters to look for attack patterns in log files, so it is essentail that it is looking in the right places. 
+
+Follow the instructions to add nginx to fail2ban: http://serverfault.com/questions/420895/how-to-use-fail2ban-for-nginx
+
+If this is too complex, leave fail2ban as-is, and at least it will protect against default attacks.
+
+	Restart fail2ban: /etc/init.d/fail2ban restart
 
 ### htpasswd
 
-We\'re going to use this a bit later (in nginx), so install it at this time.
+We're going to use this a bit later (in nginx), so install it at this time.
 
-> yum -y install httpd-tools (or apt-get install apache2-tools)
+	yum -y install httpd-tools (or apt-get install apache2-tools)
 
 ## Application setup
 
 Create a directory under /usr/local. Call it DA, DataAnywhere, app, whatever you wish:
 
-> sudo mkdir /usr/local/DA
+	sudo mkdir /usr/local/DA
 
-> sudo chmod -R g+w /usr/local/DA
+	sudo chmod -R g+w /usr/local/DA
 
-> sudo chgrp dev /usr/local/DA
+	sudo chgrp dev /usr/local/DA
 
 Set an htpasswd user/password for each person/org which will have access:
 
-> cd /usr/local/DA
+	cd /usr/local/DA
 
-> sudo htpasswd ./htpa
+	sudo htpasswd -c ./htpasswd your_username # -c means CREATE: only use it the first time.
+
+	sudo htpasswd ./htpasswd another_username
 
 1. [Bash history of server setup](https://github.com/dhornbein/DataAnywhere/blob/master/occupysandy/system/latest_hist.txt)
 
