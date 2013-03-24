@@ -44,7 +44,7 @@ This allows you to execute root commands without having to know the root passwor
 
 > esc, then :w!
 
-> :q
+> \:q
 
 Note that ALL allows you to do all commands without restriction. You can restrict other user's access. See the sudo command syntax for details.
 
