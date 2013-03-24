@@ -1,0 +1,60 @@
+@import "foundation";
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:300|Open+Sans);
+
+body {
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul, ol { 
+	padding-left: emCalc(24px); 
+	li { margin-bottom: emCalc(12px); }
+}
+
+
+
+.banner {
+	background-color: #37648D;
+	color: #FFF;
+	padding: emCalc(24px) 0;
+	margin-bottom: emCalc(24px);
+
+	h1, h2, h3, h4, h5, h6 { color: inherit; }
+}
+
+
+// header
+
+header .title { text-transform: uppercase; letter-spacing: 2px; }
+
+// side nav
+
+.side-nav.affix { position: fixed; top:0; }
+
+// code block
+
+code {
+	font-weight: normal;
+	background-color: #EEE;
+	border: 1px solid #DDD;
+	padding: 2px 2px 0;
+	border-radius: 3px;
+}
+
+pre {
+	background-color: #222;
+	color:#70FE6F;
+	padding: emCalc(16px);
+	margin-bottom: emCalc(16px);
+	code {
+		background-color: transparent;
+		border: none;
+		color: inherit;
+		padding: 0;
+		border-radius: 0;
+	}
+}
