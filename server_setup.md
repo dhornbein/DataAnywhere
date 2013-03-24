@@ -40,7 +40,9 @@ This allows you to execute root commands without having to know the root passwor
 
 > vi /etc/sudoers
 
-> your_username	ALL=(ALL) 	ALL
+> 
+
+your_username	ALL=(ALL) 	ALL
 
 > esc, then :w!
 
