@@ -166,7 +166,7 @@ These settings can replace the default settings in /etc/nginx/conf.d/default.con
 
 Create a start_uWSGI.sh script. Add this to it:
 
-        #!/bin/bash
+	#!/bin/bash
 	sudo uwsgi -s /var/lib/uwsgi_sock/uwsgi.sock --chdir /usr/local/DA -w flask_ReST:app --touch-reload . --daemonize /var/log/uwsgi/uwsgi.log --chmod-socket 666
 
 Note that flask_ReST.py is the name of my main flask app, and the name of your app can vary if you wish.
