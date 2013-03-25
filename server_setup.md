@@ -179,7 +179,7 @@ Run the script (not as root! Running as root creates a security hole):
 
         ./start_uWSGI.sh
 
-Errors can be found in the /var/log/uwsgi/**log file
+Errors can be found in the /var/log/uwsgi/\*log file
 
 Similarly create a stop_uWSGI.sh script:
 
