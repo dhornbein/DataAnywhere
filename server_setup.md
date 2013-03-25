@@ -8,6 +8,7 @@ title: Server Setup
 ## Security first
 
 These are optional but very highly recommended tools and tips to secure your server from standard attacks. 
+All edit commands are shown using vim syntax. Feel free to repalce it with your editor of choice,
 
 ### Add a common group
 
@@ -65,7 +66,7 @@ Note that ALL allows you to do all commands without restriction. You can restric
 
 Change all instances of fail2ban@example.com to your email address.
 
-        :1,$ s/fail2ban@example.com/you@your_email.org/g
+	:1,$ s/fail2ban@example.com/you@your_email.org/g
 
 	:wq
 
@@ -106,3 +107,39 @@ Note that peopl with web access do not need shell access. They only need to be a
 
 	sudo htpasswd ./htpasswd another_username
 
+### nignx
+
+These settings can replace the default settings in /etc/nginx/conf.d/default.conf 
+(or /etc/nginx/sites-enabled/default.conf depending on your system):
+
+	#
+	# The default server
+	#
+	server {
+	    listen       80 default_server;
+	    server_name  _;
+	
+	    #charset koi8-r;
+	
+	    error_page  404              /404.html;
+	    location = /404.html {
+	        root   /usr/share/nginx/html;
+	    }
+	
+	    # redirect server error pages to the static page /50x.html
+	    #
+	    error_page   500 502 503 504  /50x.html;
+	    loc	ation = /50x.html {
+	        root   /usr/share/nginx/html;
+	    }
+	
+	    send_timeout 300;
+	
+	    location / {
+	      auth_basic            "Yes?";
+	      auth_basic_user_file  /usr/local/DA/htpasswd;
+	
+	      include uwsgi_params;
+	      uwsgi_pass unix:/var/lib/uwsgi_sock/uwsgi.sock;
+	    }
+	}
