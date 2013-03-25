@@ -87,6 +87,11 @@ We're going to use this a bit later (in nginx), so install it at this time.
 
 	yum -y install httpd-tools (or apt-get install apache2-tools)
 
+### iptables
+
+On Fedora, run a utility called system-config-firewall. The only open inbound ports should be 22 and 80.
+On Ubuntu, the ufw utility can be used.
+
 ## Application setup
 
 Create a directory under /usr/local. Call it DA, DataAnywhere, app, whatever you wish:
@@ -107,13 +112,18 @@ Note that peopl with web access do not need shell access. They only need to be a
 
 	sudo htpasswd ./htpasswd another_username
 
-### prep for nginx
+### prep for nginx and uWSGI
+
+This is necessary so that we can run uWSGI as a user other than root, and that nginx can route requests to uWSGI as they come in
+
+	mkdir /var/log/uwsgi
+	chown root:dev /var/log/uwsgi
+        chmod g+w /var/log/uwsgi
 
 	mkdir /var/lib/uwsgi_sock
-
 	chown root:dev /var/lib/uwsgi_sock
-
         chmod g+w /var/lib/uwsgi_sock
+
 
 ### nginx
 
@@ -153,3 +163,33 @@ These settings can replace the default settings in /etc/nginx/conf.d/default.con
 	}
 
 ### uWSGI
+
+Create a start_uWSGI.sh script. Add this to it:
+
+        #!/bin/bash
+	sudo uwsgi -s /var/lib/uwsgi_sock/uwsgi.sock --chdir /usr/local/DA -w flask_ReST:app --touch-reload . --daemonize /var/log/uwsgi/uwsgi.log --chmod-socket 666
+
+Note that flask_ReST.py is the name of my main flask app, and the name of your app can vary if you wish.
+
+Make this script executable:
+
+	chmod 755 start_uWSGI.sh
+
+Run the script (not as root! Running as root creates a security hole):
+
+        ./start_uWSGI.sh
+
+Errors can be found in the /var/log/uwsgi/*log file
+
+Similarly create a stop_uWSGI.sh script:
+
+	#!/bin/bash
+	killall -9 /usr/bin/uwsgi-core 2>/dev/null
+	killall -9 /usr/bin/uwsgi 2>/dev/null
+	killall	 -9 uwsgi 2>/dev/null
+
+Make this script executable:
+
+	chmod 755 stop_uWSGI.sh
+
+Now you are ready to start writing the main application in flask.
