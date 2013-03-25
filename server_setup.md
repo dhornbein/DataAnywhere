@@ -71,7 +71,7 @@ Change all instances of fail2ban@example.com to your email address.
 	:wq
 
 
-Check log paths in the /etc/fail2ban/jail.conf file, and make sure they point to /var/log/nignx, /var/log/secure, etc. accoring to what is being parsed. If these are incorrect, fail2ban should issue a warning upon startup, but check to be sure. fail2ban uses regex filters to look for attack patterns in log files, so it is essentail that it is looking in the right places. 
+Check log paths in the /etc/fail2ban/jail.conf file, and make sure they point to /var/log/nginx, /var/log/secure, etc. accoring to what is being parsed. If these are incorrect, fail2ban should issue a warning upon startup, but check to be sure. fail2ban uses regex filters to look for attack patterns in log files, so it is essentail that it is looking in the right places. 
 
 Follow the instructions to add nginx to fail2ban: http://serverfault.com/questions/420895/how-to-use-fail2ban-for-nginx
 
@@ -107,7 +107,15 @@ Note that peopl with web access do not need shell access. They only need to be a
 
 	sudo htpasswd ./htpasswd another_username
 
-### nignx
+### prep for nginx
+
+	mkdir /var/lib/uwsgi_sock
+
+	chown root:dev /var/lib/uwsgi_sock
+
+        chmod g+w /var/lib/uwsgi_sock
+
+### nginx
 
 These settings can replace the default settings in /etc/nginx/conf.d/default.conf 
 (or /etc/nginx/sites-enabled/default.conf depending on your system):
@@ -143,3 +151,5 @@ These settings can replace the default settings in /etc/nginx/conf.d/default.con
 	      uwsgi_pass unix:/var/lib/uwsgi_sock/uwsgi.sock;
 	    }
 	}
+
+### uWSGI
